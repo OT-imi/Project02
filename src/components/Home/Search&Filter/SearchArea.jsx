@@ -10,7 +10,6 @@ export default function SearchArea() {
   const isThemeDark = theme === 'dark';
 
   return (
-    <View style={style.darkCtn}>
       <View
         style={[
           isThemeDark ? style.darkThmSearchArea : style.lightThmSearchArea,
@@ -25,7 +24,5 @@ export default function SearchArea() {
           placeholderTextColor={isThemeDark ? '#D3D3D3' : '#000000'}
         />
       </View>
-      <Sort />
-    </View>
   );
 }

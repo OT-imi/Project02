@@ -1,37 +1,56 @@
 import { StyleSheet } from 'react-native';
 import { scaleFontSize } from '../../assets/styles/scaling';
-import { getFontFamily } from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
   wrap: {
-    left: 50,
+    left: 60,
     flexDirection: 'row',
-    top: 10,
-    gap: 50,
+    top: 20,
+    gap: 20,
+  },
+  checkboxCtn: {
+    position: 'absolute',
+    top: 20,
+    left: 10,
+  },
+  checkbox: {
+    width: 40,
+    height: 39,
+    borderWidth: 2,
+    borderColor: '#D3D3D3',
+    borderRadius: 10,
+  },
+  checked: {
+    backgroundColor: '#2ca230ff',
+  },
+  completed: {
+    textDecorationLine: 'line-through',
+    color: '#999',
   },
   calendar: {
     fontSize: scaleFontSize(21),
+    maxWidth: 70,
   },
+  cldrText: { fontWeight: 700, opacity: 0.5, fontSize: scaleFontSize(17.5) },
   clock: {
     fontSize: scaleFontSize(21),
+    maxWidth: 70,
+  },
+  clockTxt: {
+    fontWeight: 700,
+    fontSize: scaleFontSize(17.5),
+    opacity: 0.5,
+    shadowOpacity: 0.4,
   },
   lightThemeText: {
     color: '#180d27',
-    fontFamily: getFontFamily('Nunito', '600'),
-    fontSize: scaleFontSize(30),
   },
   darkThemeText: {
-    color: '#e5d9f1',
-    fontFamily: getFontFamily('Nunito', '600'),
-    fontSize: scaleFontSize(30),
+    color: '#F1F1F1',
   },
-  lightContainer: {
+  container: {
     flex: 1,
-    backgroundColor: '#e5e2e2ff',
-  },
-  darkContainer: {
     flexGrow: 1,
-    backgroundColor: '#000000e4',
   },
   editText: {
     alignSelf: 'center',

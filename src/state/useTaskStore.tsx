@@ -16,9 +16,16 @@ export type TaskStore = {
   setTasks: (tasks: Task[]) => void;
   filterType: string;
   setFilterType: (filterType: string) => void;
+  toggleStatus: (id: string) => void;
 };
 
 export const useTaskStore = create<TaskStore>()(set => ({
+  toggleStatus: id =>
+    set(state => ({
+      tasks: state.tasks.map(t =>
+        t.id === id ? { ...t, completed: !t.completed } : t,
+      ),
+    })),
   tasks: [],
   setTasks: tasks => set({ tasks }),
   addTask: task => set(state => ({ tasks: [...state.tasks, task] })),

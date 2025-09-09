@@ -22,7 +22,7 @@ const style = StyleSheet.create({
   },
   darkHContainer: {
     borderColor: '#ffffffff',
-    backgroundColor: '#000000e6',
+    backgroundColor: '#000000da',
     color: 'black',
     textAlign: 'center',
   },

@@ -11,15 +11,21 @@ const customStyle = StyleSheet.create({
   cmpBtn: {
     maxWidth: 120,
   },
-  filterButton: {
-    backgroundColor: '#f1f1f1',
+  lightFilterButton: {
+    backgroundColor: '#D3D3D3',
     borderRadius: 35,
-    width: 115,
+    width: 125,
+    height: 41,
+  },
+  darkFilterButton: {
+    backgroundColor: '#54545481',
+    borderRadius: 35,
+    width: 125,
     height: 41,
   },
   buttonText: {
     color: '#545454d9',
-    fontSize: scaleFontSize(19),
+    fontSize: scaleFontSize(20),
     fontWeight: 'bold',
     textAlign: 'center',
     borderColor: '#545454',
@@ -29,18 +35,24 @@ const customStyle = StyleSheet.create({
   activeButton: {
     backgroundColor: '#067ad8ff',
     borderRadius: 35,
-    width: 115,
+    width: 125,
     height: 41,
   },
   activeButtonText: {
     color: '#FFFFFF',
-    fontSize: scaleFontSize(19),
+    fontSize: scaleFontSize(20),
     fontWeight: 'bold',
     textAlign: 'center',
     borderColor: '#545454',
     borderRadius: 4,
     paddingTop: 8,
     fontFamily: 'Roboto',
+  },
+    darkCtn: {
+    backgroundColor: '#000000e6',
+  },
+  lightCtn: {
+    backgroundColor: '#FFFFFF',
   },
 });
 export default customStyle;

@@ -1,17 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import { Text, View, Pressable, ActivityIndicator } from 'react-native';
-// import cautionImg from '../../assets/images/warning.png';
 import axios from 'axios';
 import { ScrollView } from 'react-native-gesture-handler';
 import style from './style';
 import Tasks from '../../components/Tasks/Tasks';
 import { useThemeStore } from '../../state/useThemeStore';
-import globalStyle from '../../assets/styles/globalStyles';
 import { useModalStore } from '../../state/useModalStore';
 import Newtask from '../NewTask/Newtask';
 import Button from '../custom/Button';
 import SearchArea from './Search&Filter/SearchArea';
 import { useTaskStore } from '../../state/useTaskStore';
+import customStyle from '../custom/style';
+import Sort from './Search&Filter/Sort';
 
 const mainUrl =
   'https://taskmanager-api.graydune-340b2a35.eastus.azurecontainerapps.io/api/Tasks';
@@ -25,12 +25,14 @@ const fetchTasks = async () => {
 export default function Home(): React.JSX.Element {
   const theme = useThemeStore(state => state.theme);
   const isThemeDark = theme === 'dark';
-  const curTheme = isThemeDark
-    ? globalStyle.darkContainer
-    : globalStyle.lightContainer;
+  const curTheme = isThemeDark ? style.darkWrapCtn : style.lightWrapCtn;
 
   const containerTheme = isThemeDark ? style.darkTaskCtn : style.lightTaskCtn;
   const curTextStyle = isThemeDark ? style.darkThemeText : style.lightThemeText;
+  const errTextStyle = isThemeDark ? style.darkErrText : style.lightErrText;
+  const boldTextStyle = isThemeDark
+    ? style.boldErrTextDark
+    : style.boldErrTextLight;
   const setIsVisible = useModalStore(state => state.setVisible);
 
   const { isLoading, isError, error, refetch } = useQuery({
@@ -57,53 +59,56 @@ export default function Home(): React.JSX.Element {
     );
   }
 
-  if (isError) {
+  if (isError || error) {
     console.log(error);
     return (
-      <View style={curTheme}>
-        <Text style={curTextStyle}>⚠️</Text>
+      <View style={[curTheme]}>
+        <Text style={style.caution}>⚠️</Text>
         {/* <Image source={cautionImg} /> */}
-        <Text style={curTextStyle}>Oops! Something went wrong</Text>
-        <Text style={curTextStyle}>Error loading Tasks{error.message}</Text>
-        <Text style={curTextStyle}>
+        <Text style={boldTextStyle}>Oops! Something went wrong</Text>
+        <Text style={errTextStyle}>
           We couldn't load your tasks. Please check your connection and try
           again.
         </Text>
         <Pressable onPress={() => handleRefetchTasks()} style={style.retryBtn}>
-          <Text style={[curTextStyle, style.retryBtnText]}> Try Again</Text>
+          <Text style={[style.retryBtnText]}> Try Again</Text>
         </Pressable>
       </View>
     );
   }
 
   return (
-    <View style={[isThemeDark ? style.darkContainer : style.lightContainer]}>
-      <SearchArea />
-      <ScrollView
-      // contentContainerStyle={globalStyle.contentContainer} //tag****
-      >
-        <Newtask />
-        {/* <View style={style.taskContainer} ></View> */}
-        {tasks?.map((task: any) => (
-          <Tasks
-            task={task}
-            containerStyle={containerTheme}
-            textCategoryStyle={[curTextStyle, style.catgry]}
-            textDescStyle={style.desc}
-            dateStyle={style.dateStyle}
-            textTitleStyle={[curTextStyle, style.textTitleStyle]}
-            editButtonStyle={style.editButton}
-            deleteButtonStyle={style.deleteButton}
-            key={task.id}
-          />
-        ))}
-      </ScrollView>
-      <Button
-        buttonStyle={style.addTaskButton}
-        textStyle={style.addTaskButtonText}
-        label={'+'}
-        onPress={setIsVisible}
-      />
-    </View>
+    <>
+      <View style={[isThemeDark ? style.darkContainer : style.lightContainer]}>
+        <View style={isThemeDark ? customStyle.darkCtn : customStyle.lightCtn}>
+          <SearchArea />
+          <Sort />
+        </View>
+        <ScrollView
+        // contentContainerStyle={globalStyle.contentContainer} //tag****
+        >
+          <Newtask />
+          {tasks?.map((task: any) => (
+            <Tasks
+              task={task}
+              containerStyle={containerTheme}
+              textCategoryStyle={[curTextStyle, style.catgry]}
+              textDescStyle={style.desc}
+              dateStyle={style.dateStyle}
+              textTitleStyle={[curTextStyle, style.textTitleStyle]}
+              editButtonStyle={style.editButton}
+              deleteButtonStyle={style.deleteButton}
+              key={task.id}
+            />
+          ))}
+        </ScrollView>
+        <Button
+          buttonStyle={style.addTaskButton}
+          textStyle={style.addTaskButtonText}
+          label={'+'}
+          onPress={setIsVisible}
+        />
+      </View>
+    </>
   );
 }
