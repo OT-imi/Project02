@@ -3,7 +3,7 @@ import { scaleFontSize } from '../../../assets/styles/scaling';
 
 const style = StyleSheet.create({
   buttonsContainer: {
-    flexWrap: 'wrap',
+    // flexWrap: 'wrap',
     flexDirection: 'row',
     gap: 18,
     alignSelf: 'center',
@@ -11,10 +11,9 @@ const style = StyleSheet.create({
     paddingBottom: 23,
   },
   searchImg: {
-    maxWidth: 22,
-    maxHeight: 22,
-    top: 17,
+    top: 9,
     left: 15,
+    fontSize: scaleFontSize(25),
   },
   lightTextArea: {
     flex: 1,
@@ -36,15 +35,15 @@ const style = StyleSheet.create({
   },
   darkThmSearchArea: {
     flexDirection: 'row',
-    gap: 25,
+    gap: 20,
     backgroundColor: '#545454',
     borderRadius: 35,
     margin: 25,
   },
   lightThmSearchArea: {
     flexDirection: 'row',
-    gap: 25,
-    backgroundColor: '#d3d3d3ff',
+    gap: 20,
+    backgroundColor: '#d6d2d25c',
     borderRadius: 35,
     margin: 25,
   },

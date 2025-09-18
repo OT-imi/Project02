@@ -12,7 +12,7 @@ const customStyle = StyleSheet.create({
     maxWidth: 120,
   },
   lightFilterButton: {
-    backgroundColor: '#D3D3D3',
+    backgroundColor: '#d6d2d25c',
     borderRadius: 35,
     width: 125,
     height: 41,
@@ -24,13 +24,18 @@ const customStyle = StyleSheet.create({
     height: 41,
   },
   buttonText: {
-    color: '#545454d9',
     fontSize: scaleFontSize(20),
     fontWeight: 'bold',
     textAlign: 'center',
     borderColor: '#545454',
     borderRadius: 4,
     paddingTop: 8,
+  },
+  lightThemeText: {
+    color: '#180d27',
+  },
+  darkThemeText: {
+    color: '#FFFFFF',
   },
   activeButton: {
     backgroundColor: '#067ad8ff',
@@ -48,11 +53,27 @@ const customStyle = StyleSheet.create({
     paddingTop: 8,
     fontFamily: 'Roboto',
   },
-    darkCtn: {
-    backgroundColor: '#000000e6',
+  darkCtn: {
+    // backgroundColor: '#000000e6',
   },
   lightCtn: {
     backgroundColor: '#FFFFFF',
+  },
+  numTxt: {
+    textAlign: 'center',
+    color: '#ffffff',
+  },
+  numberWrap: {
+    backgroundColor: '#e40808fc',
+    alignSelf: 'flex-end',
+    width: 38,
+    height: 20,
+    borderRadius: 12,
+    bottom: 40,
+    left: 10,
+  },
+  btnWrp: {
+    // flexDirection: 'row',
   },
 });
 export default customStyle;

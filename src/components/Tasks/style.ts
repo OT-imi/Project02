@@ -7,6 +7,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     top: 20,
     gap: 20,
+    paddingBottom: 25,
   },
   checkboxCtn: {
     position: 'absolute',
@@ -21,7 +22,14 @@ const style = StyleSheet.create({
     borderRadius: 10,
   },
   checked: {
-    backgroundColor: '#2ca230ff',
+    backgroundColor: '#109514ff',
+  },
+  tickStyle: {
+    top: 10,
+    height: 12,
+    width: 15,
+    // alignSelf: 'center',
+    left: 8,
   },
   completed: {
     textDecorationLine: 'line-through',
@@ -31,7 +39,17 @@ const style = StyleSheet.create({
     fontSize: scaleFontSize(21),
     maxWidth: 70,
   },
-  cldrText: { fontWeight: 700, opacity: 0.5, fontSize: scaleFontSize(17.5) },
+  cldrText: {
+    fontWeight: 700,
+    opacity: 0.5,
+    fontSize: scaleFontSize(17.5),
+    maxWidth: 120,
+  },
+  complete: {
+    fontWeight: 700,
+    opacity: 0.5,
+    fontSize: scaleFontSize(17.5),
+  },
   clock: {
     fontSize: scaleFontSize(21),
     maxWidth: 70,
@@ -57,6 +75,39 @@ const style = StyleSheet.create({
   },
   delText: {
     alignSelf: 'center',
+  },
+  empCtn: {
+    alignItems: 'center',
+    paddingTop: 150,
+    gap: 10,
+  },
+  writetxt: {
+    fontSize: scaleFontSize(70),
+  },
+  boldTxt: {
+    fontWeight: 'bold',
+    fontSize: scaleFontSize(21),
+    textAlign: 'center',
+  },
+  detailsTxt: {
+    fontSize: scaleFontSize(16),
+    fontWeight: 500,
+    opacity: 0.5,
+    maxWidth: 240,
+    paddingBottom: 10,
+    textAlign: 'center',
+    lineHeight: 20,
+  },
+  crtfirst: {
+    backgroundColor: '#0532fcaf',
+    borderRadius: 10,
+    width: 133,
+  },
+  buttonTxt: {
+    color: '#FFFFFF',
+    textAlign: 'center',
+    fontWeight: 800,
+    fontSize: scaleFontSize(16),
   },
 });
 

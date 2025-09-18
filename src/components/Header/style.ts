@@ -17,14 +17,10 @@ const style = StyleSheet.create({
   lightHContainer: {
     borderColor: '#180d27',
     backgroundColor: '#ffffff',
-    color: '#180d27',
-    textAlign: 'center',
   },
   darkHContainer: {
     borderColor: '#ffffffff',
     backgroundColor: '#000000da',
-    color: 'black',
-    textAlign: 'center',
   },
   imageContainer: {
     justifyContent: 'center',
@@ -47,7 +43,7 @@ const style = StyleSheet.create({
     backgroundColor: '#d3d3d386',
     width: 40,
     height: 40,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   imageWrapperDark: {
     borderRadius: FAB_SIZE / 2,

@@ -3,21 +3,36 @@ import {
   horizontalScale,
   scaleFontSize,
   verticalScale,
-} from '../../assets/styles/scaling';
-import { getFontFamily } from '../../assets/fonts/helper';
+} from '../../../../assets/styles/scaling';
+import { getFontFamily } from '../../../../assets/fonts/helper';
 
 const style = StyleSheet.create({
   modalView: {
     backgroundColor: 'rgba(0, 0, 0, 0.59)',
     bottom: 0,
   },
-  modalContent: {
+
+  lightModalContent: {
     backgroundColor: '#ffffff',
     marginTop: verticalScale(240),
-    gap: 20,
+    gap: 25,
     bottom: 0,
     borderRadius: 20,
     height: horizontalScale(500),
+  },
+  darkModalContent: {
+    backgroundColor: '#363636ff',
+    marginTop: verticalScale(240),
+    gap: 25,
+    bottom: 0,
+    borderRadius: 20,
+    height: horizontalScale(500),
+  },
+  lightThemeText: {
+    color: '#180d27',
+  },
+  darkThemeText: {
+    color: '#FFFFFF',
   },
   boldText: {
     fontSize: scaleFontSize(30),
@@ -41,7 +56,6 @@ const style = StyleSheet.create({
   },
   cancelButton: {
     backgroundColor: '#D3D3D3',
-    backfaceVisibility: 'visible',
     width: verticalScale(115),
     height: horizontalScale(55),
     paddingVertical: verticalScale(10),
@@ -63,7 +77,7 @@ const style = StyleSheet.create({
     marginRight: 60,
     height: verticalScale(40),
     padding: 15,
-    fontSize: scaleFontSize(16.5),
+    fontSize: scaleFontSize(17.5),
     fontWeight: 'condensedBold',
   },
   descriptionLabel: {
@@ -76,8 +90,8 @@ const style = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 9,
     marginRight: 60,
-    height: verticalScale(75),
-    fontSize: scaleFontSize(16.5),
+    height: verticalScale(80),
+    fontSize: scaleFontSize(17.5),
     fontFamily: getFontFamily('Nunito', '200'),
     verticalAlign: 'top',
     padding: 15,
@@ -86,7 +100,7 @@ const style = StyleSheet.create({
     flexWrap: 'wrap',
     flexDirection: 'row',
     alignSelf: 'center',
-    top: 15,
+    top: 5,
   },
   descriptionWrap: { left: 30, gap: 10 },
   titleWrap: { left: 30, gap: 10 },

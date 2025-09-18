@@ -19,6 +19,9 @@ const globalStyle = StyleSheet.create({
     textAlign: 'center',
     flex: 1,
   },
-  
+  // contentContainer:{
+  //   flex:1,
+  //   backgroundColor:'#000000da'
+  // }
 });
 export default globalStyle;

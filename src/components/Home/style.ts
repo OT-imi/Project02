@@ -75,6 +75,7 @@ const style = StyleSheet.create({
   },
   lightContainer: {
     flex: 1,
+    paddingBottom: 20,
   },
   darkContainer: {
     flex: 1,
@@ -106,7 +107,6 @@ const style = StyleSheet.create({
     fontSize: FAB_SIZE / 1.3,
     fontWeight: 'bold',
   },
-
   lightThemeText: {
     color: '#180d27',
   },
@@ -173,7 +173,7 @@ const style = StyleSheet.create({
     backgroundColor: '#cee0f6ff',
     position: 'absolute',
     right: 73,
-    top: 8,
+    top: 15,
     shadowOpacity: 0.3,
     shadowOffset: { width: 0, height: 2 },
     alignItems: 'center',
@@ -186,12 +186,31 @@ const style = StyleSheet.create({
     backgroundColor: '#f8cacadc',
     position: 'absolute',
     right: 20,
-    top: 8,
+    top: 15,
     shadowOpacity: 0.3,
     shadowOffset: { width: 0, height: 2 },
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: FAB_SIZE,
+  },
+  empCtn: {
+    alignItems: 'center',
+    paddingTop: 150,
+    gap: 10,
+  },
+  boldEmpFilteredTask: {
+    fontWeight: 'bold',
+    fontSize: scaleFontSize(21),
+    textAlign: 'center',
+    opacity: 0.5,
+  },
+  extraTxt: {
+    fontSize: scaleFontSize(16),
+    fontWeight: 500,
+    maxWidth: 240,
+    paddingBottom: 10,
+    textAlign: 'center',
+    lineHeight: 20,
   },
 });
 export default style;
